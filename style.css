@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&family=Tilt+Warp&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+:root{
+    --azul_oscuro: #1c1420;
+    --color_claro: #e4e2e6;
+    --voleta_claro: #57567c ;
+}
+body{
+    background-color: var(--azul_oscuro);
+}
+
+.wrapper{
+    padding: 50px;
+}
+
+.wrapper__header{
+    color: var(--color_claro);
+    font-size: 30pt;
+    FONT-WEIGHT: 600;
+}
+
+.wrapper__text{
+    background: #57567c69;
+    padding: 15px;
+    display: grid;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+
+}
+
+
+.wrapper__text:hover{
+    background: #57567c26;
+}
+
+.wrapper__text__header{
+    color: var(--color_claro);
+    font-size: 20pt;
+}
+.wrapper__text__location{
+    display: flex;
+    color: violet;
+    FONT-WEIGHT: 600;
+    font-size: 14pt!important;
+}
+
+.internautas{
+    display: flex;
+    font-size: 20pt;
+    FONT-WEIGHT: 600;
+    color: #ffc366;
+}
+.wrapper__cont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+        gap : 50px;
+}
+.estacion_link_detalle{
+    text-decoration: none;
+    width: 200px;
+    height: 275px;
+    margin: 20px;
+
+}
