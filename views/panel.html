@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-Clima</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <template id="EstationCard">
+    	<a href="" class="estacion_link_detalle">
+        	<div class="wrapper__text" >
+                <div class="wrapper__text__header"></div>
+                <div class="wrapper__text__location">
+                    <span class="material-symbols-outlined">location_on</span>location 
+                </div>
+                <div class="internautas">
+                    128 <span class="material-symbols-outlined">person</span>
+                </div>
+            </div>
+        </a>
+    </template>
+    <div class="wrapper">
+        <div class="wrapper__header">Estaciones</div>
+        <div class="wrapper__cont" id="ContenedorEstacion">
+            
+    	</div>
+    </div>
+</body>
+<script>
+	async function loadListado(url){
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	}
+	function loadEstation(estation){
+		const tpl = EstationCard.content;
+		const clon = tpl.cloneNode(true);
+		clon.querySelector(".wrapper__text__header").textContent = estation.apodo;
+		clon.querySelector(".wrapper__text__location").innerHTML = '<span class="material-symbols-outlined">location_on</span>'+estation.ubicacion;
+		clon.querySelector(".internautas").innerHTML = estation.visitas + '<span class="material-symbols-outlined">person</span>';
+		clon.querySelector(".estacion_link_detalle").href = "detalle&chipid=" + estation.chipid;
+		ContenedorEstacion.appendChild(clon);
+	}
+	loadListado("https://mattprofe.com.ar/proyectos/app-estacion/datos.php?mode=list-stations").then(
+		estaciones => {
+			estaciones.forEach(
+				estacion =>{
+					loadEstation(estacion);
+				}
+			);
+		}
+	);
+
+</script>
+</html>

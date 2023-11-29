@@ -69,20 +69,3 @@ body{
     margin: 20px;
 
 }
-.wrapper__description{
-    font-size: 18pt;
-    margin: auto;
-    margin-top: 10vh;
-    color: #e59a39;
-}
-.wrapper__button{
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    background: #eb9ace;
-    padding: 15px;
-    border-radius: 12px;
-    color: #583386;
-    font-weight: bolder;
-    text-decoration: none;
-}
