@@ -40,14 +40,13 @@
 		clon.querySelector(".wrapper__text__header").textContent = estation.apodo;
 		clon.querySelector(".wrapper__text__location").innerHTML = '<span class="material-symbols-outlined">location_on</span>'+estation.ubicacion;
 		clon.querySelector(".internautas").innerHTML = estation.visitas + '<span class="material-symbols-outlined">person</span>';
-		clon.querySelector(".estacion_link_detalle").href = "detalle.php?chipid=" + estation.chipId;
+		clon.querySelector(".estacion_link_detalle").href = "detalle.php?chipid=" + estation.chipid;
 		ContenedorEstacion.appendChild(clon);
 	}
-	loadListado("http://mattprofe.com.ar:81/alumno/3856/app-estacion/api/").then(
+	loadListado("https://mattprofe.com.ar/proyectos/app-estacion/datos.php?mode=list-stations").then(
 		estaciones => {
 			estaciones.forEach(
 				estacion =>{
-					console.log(estacion);
 					loadEstation(estacion);
 				}
 			);
